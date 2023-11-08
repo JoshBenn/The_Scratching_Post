@@ -1,14 +1,14 @@
 #![allow(non_snake_case)]
-mod Character;
+mod character;
 
 use std::io;
-use Character::{Race, Class};
+use character::{Character,Race, Class};
 
 
 fn main() {
     let 
     
-    println!("input a line, yo".to_string());
+    println!("input a line, yo");
     let mut input_text = String::new();
     io::stdin()
         .read_line(&mut input_text)
