@@ -6,13 +6,13 @@ pub struct Character {
     level: u8,
 }
 
-enum Race {
+pub enum Race {
     Cat,
     Demon,
     Human,
 }
 
-enum Class {
+pub enum Class {
     Physical,
     Magical,
     Ranged,

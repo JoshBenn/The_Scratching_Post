@@ -14,9 +14,11 @@ fn main() {
 
     
     let mut player = match input_text.as_str() {
-        "Cat" => Character::new(),
+        "Cat" => Character::new(
+            Race::Cat, Class::Magical
+        ),
         //"Demon" => Character::new(),
         //"Human" => Character::new(),
-        _ => panic!("Invalid Input!");
+        _ => panic!("Invalid Input!"),
     };
 }
