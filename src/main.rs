@@ -2,12 +2,10 @@
 mod character;
 
 use std::io;
-use character::{Character,Race, Class};
+use character::{Character, Race, Class};
 
 
 fn main() {
-    let 
-    
     println!("input a line, yo");
     let mut input_text = String::new();
     io::stdin()
