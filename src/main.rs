@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use std::io;
 
+mod Character;
 
 fn main() {
     println!("input a line, yo");
