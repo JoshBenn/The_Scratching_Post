@@ -1,21 +1,24 @@
 #![allow(non_snake_case)]
-use std::io;
-
 mod Character;
+
+use std::io;
+use Character::{Race, Class};
+
 
 fn main() {
     let 
     
-    println!("input a line, yo");
+    println!("input a line, yo".to_string());
     let mut input_text = String::new();
     io::stdin()
         .read_line(&mut input_text)
         .expect("Could not read input");
 
+    let input_text = input_text.trim();
     
-    let mut player = match input_text.as_str() {
+    let mut player = match input_text {
         "Cat" => Character::new(
-            Character::Race::Cat, Character::Class::Magical
+            Race::Cat, Class::Magical
         ),
         //"Demon" => Character::new(),
         //"Human" => Character::new(),
