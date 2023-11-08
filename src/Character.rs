@@ -18,4 +18,15 @@ enum Class {
     Ranged,
 }
 
+impl Character {
+    pub fn new(race: Race, class: Class) -> Character {
+        Character {
+            race: race,
+            class: class,
+            health: 10.0,
+            experience: 0,
+            level: 1,
+        }
+    }
+}
 

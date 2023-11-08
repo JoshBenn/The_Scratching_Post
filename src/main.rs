@@ -4,6 +4,8 @@ use std::io;
 mod Character;
 
 fn main() {
+    let 
+    
     println!("input a line, yo");
     let mut input_text = String::new();
     io::stdin()
@@ -11,5 +13,10 @@ fn main() {
         .expect("Could not read input");
 
     
-        println!("Your input: {}", input_text);
+    let mut player = match input_text.as_str() {
+        "Cat" => Character::new(),
+        //"Demon" => Character::new(),
+        //"Human" => Character::new(),
+        _ => panic!("Invalid Input!");
+    };
 }
