@@ -1,7 +1,7 @@
-mod Character;
+mod character;
 
 use std::io;
-use Character::{Character as Char, Race, Class};
+use character::{Character, Race, Class};
 
 
 fn main() {
@@ -14,7 +14,7 @@ fn main() {
     let input_text = input_text.trim();
     
     let mut player = match input_text {
-        "Cat" => Char::new(
+        "Cat" => Character::new(
             Race::Cat, Class::Magical
         ),
         //"Demon" => Character::new(),
