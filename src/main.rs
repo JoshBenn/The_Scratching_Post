@@ -1,4 +1,5 @@
 #![allow(non_snake_case)]
+#[path = "Character.rs"]
 mod character;
 
 use std::io;
