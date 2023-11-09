@@ -1,9 +1,7 @@
-#![allow(non_snake_case)]
-#[path = "Character.rs"]
-mod character;
+mod Character;
 
 use std::io;
-use character::{Character, Race, Class};
+use Character::{Character as Char, Race, Class};
 
 
 fn main() {
@@ -16,7 +14,7 @@ fn main() {
     let input_text = input_text.trim();
     
     let mut player = match input_text {
-        "Cat" => Character::new(
+        "Cat" => Char::new(
             Race::Cat, Class::Magical
         ),
         //"Demon" => Character::new(),
