@@ -26,7 +26,7 @@ fn main() {
 
         match create_character(race_choice, class_choice) {
             Ok(created) => player = Some(created),
-            Err(error) => println!("Erro: {}", error),
+            Err(error) => println!("Error: {}", error),
         }
     }
 
