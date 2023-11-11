@@ -1,17 +1,21 @@
+
+#[derive(Debug)]
 pub struct Character {
-    race: Race,
-    class: Class,
-    health: f64,
-    experience: u32,
-    level: u8,
+    pub race: Race,
+    pub class: Class,
+    pub health: f64,
+    pub experience: u32,
+    pub level: u8,
 }
 
+#[derive(Debug)]
 pub enum Race {
     Cat,
     Demon,
     Human,
 }
 
+#[derive(Debug)]
 pub enum Class {
     Physical,
     Magical,
