@@ -5,12 +5,13 @@ use character::{Character, Race, Class};
 
 
 fn main() {
-    println!("input a line, yo");
     let mut race_choice = String::new();
     let mut class_choice = String::new();
+    println!("Input a race\n{{--[Cat], [Demon], or [Human]:--}}");
     io::stdin()
         .read_line(&mut race_choice)
         .expect("Could not read race input!");
+    println!("Input a class\n Physical, Magical, or Ranged:");
     io::stdin()
         .read_line(&mut class_choice)
         .expect("Could not read class input!");

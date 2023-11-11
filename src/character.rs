@@ -1,3 +1,5 @@
+
+#[derive(Debug)]
 pub struct Character {
     pub race: Race,
     pub class: Class,
@@ -6,12 +8,14 @@ pub struct Character {
     pub level: u8,
 }
 
+#[derive(Debug)]
 pub enum Race {
     Cat,
     Demon,
     Human,
 }
 
+#[derive(Debug)]
 pub enum Class {
     Physical,
     Magical,
