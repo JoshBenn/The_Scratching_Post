@@ -1,9 +1,9 @@
 pub struct Character {
-    race: Race,
-    class: Class,
-    health: f64,
-    experience: u32,
-    level: u8,
+    pub race: Race,
+    pub class: Class,
+    pub health: f64,
+    pub experience: u32,
+    pub level: u8,
 }
 
 pub enum Race {
