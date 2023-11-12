@@ -49,18 +49,18 @@ pub enum Class {       //Class
 }
 
 #[derive(Debug)]
+pub enum WeaponType {  //WeaponType
+    Staff,
+    Sword,
+    Bow,
+}
+
+#[derive(Debug)]
 pub enum ArmorType {   //ArmorType
     Helmet,
     Body,
     Legs,
     Feet,
-}
-
-#[derive(Debug)]
-pub enum WeaponType {  //WeaponType
-    Staff,
-    Sword,
-    Bow,
 }
 
 //=========== Implementations ===========
@@ -84,7 +84,6 @@ impl Character {               //Character
     }
 }
 
-
 impl Default for Character {  //Character Default
     fn default() -> Character {
         Character {
@@ -95,6 +94,17 @@ impl Default for Character {  //Character Default
             health: 10.0,
             experience: 0,
             level: 1, 
+        }
+    }
+}
+
+impl Weapon {                //Weapon
+    pub fn new(weapon_type: WeaponType, accuracy: i16, penetration: i16, power: u16) -> Weapon {
+        Weapon {
+            weapon_type,
+            accuracy,
+            penetration,
+            power,
         }
     }
 }
@@ -123,18 +133,4 @@ impl Armor {                  //Armor
         }
     }
 }
-
-
-
-impl Weapon {
-    pub fn new(weapon_type: WeaponType, accuracy: i16, penetration: i16, power: u16) -> Weapon {
-        Weapon {
-            weapon_type,
-            accuracy,
-            penetration,
-            power,
-        }
-    }
-}
-
 
