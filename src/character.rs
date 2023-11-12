@@ -134,3 +134,10 @@ impl Armor {                  //Armor
     }
 }
 
+
+
+
+#[config(test)]
+mod test_character {
+    //add testing functionality
+}
