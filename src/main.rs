@@ -38,47 +38,18 @@ fn main() {
 
 
 fn create_character(race: &str, class: &str) -> Result<Character, String> {
-    let invalid_race = "Invalid race!\n\n".to_string();
-    let invalid_class = "Invalid class\n\n".to_string();
-    
-    let player = match race {
-        "Demon" => match class {
-            "Physical" => Character::new(
-                Race::Demon, Class::Physical
-            ),
-            "Magical" => Character::new(
-                Race::Demon, Class::Magical
-            ),
-            "Ranged" => Character::new(
-                Race::Demon, Class::Ranged
-            ),
-            _ => return Err(invalid_class),
-        },
-        "Cat" => match class {
-            "Physical" => Character::new(
-                Race::Cat, Class::Physical
-            ),
-            "Magical" => Character::new(
-                Race::Cat, Class::Magical
-            ),
-            "Ranged" => Character::new(
-                Race::Cat, Class::Ranged
-            ),
-            _ => return Err(invalid_class),
-        },
-        "Human" => match class {
-            "Physical" => Character::new(
-                Race::Human, Class::Physical
-            ),
-            "Magical" => Character::new(
-                Race::Human, Class::Magical
-            ),
-            "Ranged" => Character::new(
-                Race::Human, Class::Ranged
-            ),
-            _ => return Err(invalid_class),
-        },
-        _ => return Err(invalid_race),
+    //Grab the race choice
+    let player_race = match race {
+        "Cat" => Race::Cat,
+        "Demon" => Race::Demon,
+        "Human" => Race::Human,
+        _ => return Err(String::from("Invalid race!")),
     };
-    Ok(player)
+    //Return the newly created character
+    return match class {
+        "Magical" => Ok(Character::new(player_race, Class::Magical)),
+        "Physical" => Ok(Character::new(player_race, Class::Physical)),
+        "Ranged" => Ok(Character::new(player_race, Class::Ranged)),
+        _=> return Err(String::from("Invalid class!")),
+    };
 }
