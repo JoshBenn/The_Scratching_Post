@@ -11,7 +11,7 @@ fn main() {
     while player.is_none() {
         let mut race_choice = String::new();
         let mut class_choice = String::new();
-
+        //Query player -> get inputs
         println!("\nInput a race\n==[Cat] : [Demon] : [Human]==");
         io::stdin()
             .read_line(&mut race_choice)
@@ -20,16 +20,16 @@ fn main() {
         io::stdin() 
             .read_line(&mut class_choice)
             .expect("Could not read class input!\n\n");
-        
+        //Trim excess
         let race_choice = race_choice.trim();
         let class_choice = class_choice.trim();
-
+        //Create the character
         match create_character(race_choice, class_choice) {
             Ok(created) => player = Some(created),
             Err(error) => println!("Error: {}", error),
         }
     }
-
+    
     let mut player = player.unwrap();
   
     println!("{:#?}", player);

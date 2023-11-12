@@ -65,8 +65,8 @@ pub enum ArmorType {   //ArmorType
 
 //=========== Implementations ===========
 impl Character {               //Character
-    pub fn new(race: Race, class: Class) -> Character {
-        Character {
+    pub fn new(race: Race, class: Class) -> Self {
+        Self {
             race: race,
             class: class,
             armor_set: ArmorSet {..Default::default() },
@@ -75,7 +75,7 @@ impl Character {               //Character
                     Class::Physical => WeaponType::Sword,
                     Class::Magical => WeaponType::Staff,
                     Class::Ranged => WeaponType::Bow,
-                }, 1, 1, 1
+                }, (1, 1, 1)
             ),
             health: 10.0,
             experience: 0,
@@ -85,12 +85,12 @@ impl Character {               //Character
 }
 
 impl Default for Character {  //Character Default
-    fn default() -> Character {
-        Character {
+    fn default() -> Self {
+        Self {
             race: Race::Cat,
             class: Class::Magical,
             armor_set: ArmorSet { ..Default::default() },
-            weapon: Weapon::new(WeaponType::Staff, 1, 1, 1),
+            weapon: Weapon::new(WeaponType::Staff, (1, 1, 1)),
             health: 10.0,
             experience: 0,
             level: 1, 
@@ -99,12 +99,12 @@ impl Default for Character {  //Character Default
 }
 
 impl Weapon {                //Weapon
-    pub fn new(weapon_type: WeaponType, accuracy: i16, penetration: i16, power: u16) -> Weapon {
-        Weapon {
+    pub fn new(weapon_type: WeaponType, stats: (i16, i16, u16)) -> Self {
+        Self {
             weapon_type,
-            accuracy,
-            penetration,
-            power,
+            accuracy: stats.0,
+            penetration: stats.1,
+            power: stats.2,
         }
     }
 }
@@ -114,22 +114,22 @@ impl ArmorSet {               //ArmorSet
 }
 
 impl Default for  ArmorSet {  //ArmorSet Default
-    fn default() -> ArmorSet {
-        ArmorSet {
-            helmet: Armor::new(ArmorType::Helmet, 1, 1),
-            body: Armor::new(ArmorType::Body, 1, 1),
-            legs: Armor::new(ArmorType::Legs, 1, 1),
-            feet: Armor::new(ArmorType::Feet, 1, 1),
+    fn default() -> Self {
+        Self {
+            helmet: Armor::new(ArmorType::Helmet, (1, 1)),
+            body: Armor::new(ArmorType::Body, (1, 1)),
+            legs: Armor::new(ArmorType::Legs, (1, 1)),
+            feet: Armor::new(ArmorType::Feet, (1, 1)),
         }
     }
 }
 
 impl Armor {                  //Armor
-    pub fn new(armor_type: ArmorType, accuracy: i16, penetration: i16) -> Armor {
-        Armor {
+    pub fn new(armor_type: ArmorType, stats: (i16, i16)) -> Self {
+        Self {
             armor_type,
-            accuracy,
-            penetration,
+            accuracy: stats.0,
+            penetration: stats.1,
         }
     }
 }
